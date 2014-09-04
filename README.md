@@ -1,6 +1,6 @@
 ## Configuración básica de MySQL en Sails.js
 
-A continuación les presento la forma en que configuré mi Sails.js para trabajar con MySQL, hasta este momento, la documentación es muy limitada 
+A continuación les presento la forma en que configuré mi Sails.js para trabajar con MySQL, hasta este momento, la documentación en Sails.js es muy limitada por lo que un proceso "sencillo" de pronto se torna complicado, es por eso la razón de este mini-tutorial.
 
 ### Intalación de Node.js + Sails.js
 Descarga e instala Nodejs 
@@ -64,7 +64,38 @@ module.exports = {
 };
 ```
 
+Ahora en connections.js necesitamos modificar lo siguiente:
 
+```javascript
+  someMysqlServer: {
+    adapter: 'sails-mysql',
+    host: 'host',
+    user: 'tuUsuario',
+    password: 'tuContraseña',
+    database: 'tuBaseDeDatos'
+  },
+```
+Por último en models.js modificamos la siguiente línea
+
+```javascript
+connection: 'localDiskDb', //Por defecto Sails guarda la información en disco
+```
+Por esta:
+```javascript
+connection: 'someMysqlServer', //Le indicamos a sails que nos conectaremos con MySQL
+```
+
+Una vez finalizados estos cambios ejecuta nuevamente:
+
+```javascript
+> sails lift
+```
+
+Con esto en teoría conseguirás una **API Rest** hacia tu tabla users.
+```
+http://localhost:1337/user/
+```
+Para mayor información revisa : https://github.com/fraygit/SailsJs-Mysql-Association-Tutorial/
 
 
 
