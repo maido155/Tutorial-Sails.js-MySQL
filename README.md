@@ -9,7 +9,7 @@ http://nodejs.org/
 
 En una terminal de tu sistema operativo, escribre lo siguiente:
 
-```javascript
+```
 > npm install –g sails
 ```
 
