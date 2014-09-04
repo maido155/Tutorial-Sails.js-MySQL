@@ -39,7 +39,7 @@ CREATE TABLE `users` (
   `pass` varchar(30) DEFAULT NULL,
   `complete_name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`users_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
 Para este ejemplo crearemos una API sails con el nombre user
 
